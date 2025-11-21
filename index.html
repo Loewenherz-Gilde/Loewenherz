@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACK PEARL | Forge of Empires</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">BLACK PEARL</div>
+        <div class="nav-links">
+            <a href="#home">Start</a>
+            <a href="#info">Infos</a>
+            <a href="#leaders">Gildenteam</a>
+            <a href="#" id="contact-btn">Bewerben</a>
+            <a href="#" id="toggle-email">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- Email Popup -->
+    <div id="email-popup" class="email-popup">
+        <button class="close-btn">&times;</button>
+        <p>✉️ black.pearl.gilde@gmail.com</p>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>WILLKOMMEN AN BORD DER BLACK PEARL</h1>
+            <p>Die strategische Gilde in Forge of Empires</p>
+            <a href="#" id="hero-contact-btn" class="btn">Jetzt bewerben</a>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info" id="info">
+        <h2>INFORMATION</h2>
+        <p class="centered-text">Wir sind eine aktive FoE-Gilde mit Fokus auf Gemeinschaft und strategischem Spiel.</p>
+        
+        <div class="guild-level">
+            <h3>Gildenstufe: <span id="level">71</span>/100</h3>
+            <div class="level-bar">
+                <div class="level-progress" id="level-bar"></div>
+            </div>
+            <p class="current-level">Aktuell: Stufe 71</p>
+        </div>
+
+        <ul class="boost-list">
+            <li>40% Rekrutierungs-Boost</li>
+            <li>20FP täglich durch das Rathaus</li>
+            <li>25% Baukostenrabatt</li>
+        </ul>
+
+        <div class="expectations-container">
+            <div class="offerings">
+                <h3>WIR BIETEN:</h3>
+                <ul>
+                    <li>Interne volle Archebonus Förderung</li>
+                    <li>aktive externe 1.9er Förderung</li>
+                    <li>GEX Stufe V</li>
+                    <li>Geplante GG & QI</li>
+                    <li>Aktivität und Spaß</li>
+                </ul>
+            </div>
+            <div class="expectations">
+                <h3>WIR ERWARTEN:</h3>
+                <ul>
+                    <li>Teilnahme am Gildenleben (Chats, Förderung, Handel)</li>
+                    <li>Mindestteilnahme bei GEX und GG hängen von Spielerpunkten ab</li>
+                    <li>Stets Höflichkeit!</li>
+                    <li>Antworten auf Nachrichten des Gildenrat</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+ <!-- Leaders Section -->
+<section class="leaders" id="leaders">
+    <h2>GILDENTEAM</h2>
+
+    <div class="leader-grid five-layout">
+        <!-- Reihe 1 (2 Karten) -->
+        <div class="leader-card">
+            <h3>Sirinora</h3>
+            <p>Käpt'n</p>
+        </div>
+
+        <div class="leader-card">
+            <h3>Troublemaker</h3>
+            <p>Co - Leitung</p>
+        </div>
+
+        <!-- Reihe 2 (1 Karte zentriert) -->
+        <div class="leader-card centered-one">
+            <h3>Philipp5902</h3>
+            <p>Gildenrat | Technisches</p>
+        </div>
+
+        <!-- Reihe 3 (2 Karten) -->
+        <div class="leader-card">
+            <h3>Aurelia</h3>
+            <p>Gildenrat</p>
+        </div>
+
+        <div class="leader-card">
+            <h3>Brüggli</h3>
+            <p>Gildenrat</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Kontaktformular Section -->
+    <section class="contact" id="contact">
+        <h2>BEWERBUNG</h2>
+        <div class="contact-form">
+            <form action="https://formspree.io/f/mjkarqey" method="POST">
+                <div class="form-group">
+                    <label for="email">Deine E-Mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Dein Spielername:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Dein Zeitalter:</label>
+                    <input type="text" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Deine Nachricht an uns:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Bewerbung abschicken</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 BLACK PEARL | Alle Rechte vorbehalten</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
