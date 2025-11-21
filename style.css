@@ -1,0 +1,700 @@
+
+/* ===== NEUES, EPISCHES DESIGN ===== */
+:root {
+    --black: #0a0a0a;
+    --dark-gray: #1a1a1a;
+    --gray: #2d2d2d;
+    --light-gray: #7a7a7a;
+    --gold: #d4af37; /* Edles Gold statt knalligem Gelb */
+    --gold-light: #f4e5c2;
+    --bronze: #cd7f32;
+    --white: #f0f0f0;
+    --red-dark: #8b0000;
+    --font-main: 'Cinzel', serif;
+    --font-secondary: 'MedievalSharp', cursive;
+}
+
+/* Google Fonts einbinden */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=MedievalSharp&display=swap');
+
+/* Reset & Grundsätze */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.info p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.2rem;
+    color: var(--gold-light);
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    font-family: var(--font-main);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(10, 10, 10, 0.9) 0%, rgba(0, 0, 0, 1) 90%),
+        url('https://www.transparenttextures.com/patterns/black-paper.png');
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: rgba(10, 10, 10, 0.9);
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--gold);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+.leader-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: var(--font-secondary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+#contact-btn, #toggle-email {
+    background: var(--gold);
+    color: var(--black);
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+#contact-btn:hover, #toggle-email:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1556888335-95371827d5fb?ixlib=rb-4.1.0&auto=format&fit=crop&w=1631&q=80&blend=000000&blend-mode=multiply') no-repeat center/cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    font-family: var(--font-secondary);
+    color: var(--white);
+}
+
+/* ===== Hero Button Gold Update ===== */
+#hero-contact-btn {
+    background: var(--gold); /* Gold statt Rot */
+    color: var(--black); /* Schwarzer Text für Kontrast */
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    border: 2px solid var(--gold-light); /* Hellgoldener Rand */
+    transition: all 0.3s;
+    animation: pulse-gold 2s infinite; /* Neue Gold-Puls-Animation */
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#hero-contact-btn:hover {
+    background: var(--gold-light); /* Helleres Gold beim Hover */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+    animation: none; /* Animation stoppt beim Hover */
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(139, 0, 0, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(139, 0, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(139, 0, 0, 0); }
+}
+/* Neue Animation für den goldenen Button (unter @keyframes pulse einfügen!) */
+@keyframes pulse-gold {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+/* ===== INFO SECTION ===== */
+.info {
+    padding: 5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 800px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--gold);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.info h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+}
+
+/* Gildenlevel Progress Bar - ANGEPASST auf Stufe 71 von 100 */
+.guild-level {
+    margin: 3rem auto;
+    text-align: center;
+    max-width: 600px;
+    background: rgba(26, 26, 26, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--gold);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.guild-level h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--gold-light);
+}
+
+.level-bar {
+    height: 25px;
+    background: var(--dark-gray);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    position: relative;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.level-progress {
+    height: 100%;
+    width: 71%; /* KORRIGIERT: 71% für Stufe 71 */
+    background: linear-gradient(90deg, var(--bronze), var(--gold));
+    transition: width 2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    position: relative;
+}
+
+.level-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent);
+}
+
+.level-bar::after {
+    content: '71%'; /* KORRIGIERT: 71% statt 10% */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.current-level {
+    font-style: italic;
+    color: var(--light-gray);
+}
+
+/* Boost-Liste */
+.boost-list {
+    list-style-type: none;
+    margin: 2rem auto;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.boost-list li {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--gold);
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    color: var(--gold-light);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.boost-list li::before {
+    content: '⚔️';
+    margin-right: 0.5rem;
+}
+
+/* Angebote & Erwartungen */
+.expectations-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 3rem auto;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.offerings, .expectations {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(26, 26, 26, 0.7);
+    padding: 2rem;
+    border-radius: 8px;
+    border-top: 4px solid var(--gold);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.offerings:hover, .expectations:hover {
+    transform: translateY(-5px);
+}
+
+.offerings h3, .expectations h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.offerings h3::after, .expectations h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+}
+
+.offerings ul, .expectations ul {
+    list-style-type: none;
+}
+
+.offerings li, .expectations li {
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+    color: var(--white);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.offerings li::before, .expectations li::before {
+    content: '•';
+    color: var(--gold);
+    position: absolute;
+    left: 0;
+}
+
+/* ===== AKTUALISIERTES GILDENLEITUNG-LAYOUT ===== */
+.leaders {
+    padding: 5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.leaders h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--gold);
+    position: relative;
+}
+
+.leaders h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gold);
+}
+
+/* ANGEPASSTES LAYOUT: Zwei oben, eine darunter in der Mitte */
+.leader-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 700px;
+    margin: 2rem auto 0;
+    position: relative;
+}
+
+.leader-card {
+    background: linear-gradient(135deg, rgba(42, 42, 42, 0.8), rgba(26, 26, 26, 0.9));
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--gold);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.leader-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(212, 175, 55, 0.1),
+        rgba(212, 175, 55, 0) 70%
+    );
+    transform: rotate(30deg);
+    pointer-events: none;
+}
+
+.leader-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.leader-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--gold);
+}
+
+.leader-card p {
+    color: var(--light-gray);
+    font-style: italic;
+}
+
+/* ===== 5-FELDER LAYOUT FÜR GILDENTEAM ===== */
+.leader-grid.five-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 2rem;
+    max-width: 700px;
+    margin: 2rem auto 0;
+}
+
+/* Zentrierte Karte in der zweiten Reihe */
+.leader-card.centered-one {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 300px;
+}
+
+/* Mobile Ansicht für 5-Felder Layout */
+@media (max-width: 600px) {
+    .leader-grid.five-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .leader-card.centered-one {
+        grid-column: 1;
+        max-width: 100%;
+    }
+}
+
+/* ===== KONTAKTFORMULAR ===== */
+.contact {
+    padding: 5rem 2rem;
+    background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), 
+                url('https://www.transparenttextures.com/patterns/parchment.png');
+    display: none;
+    max-width: 700px;
+    margin: 0 auto;
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--gold);
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(26, 26, 26, 0.8);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--gold);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: var(--gold-light);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--gold);
+    color: var(--white);
+    font-family: var(--font-main);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold-light);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    background: var(--gold);
+    color: var(--black);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    font-size: 1.1rem;
+    font-family: var(--font-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-form button[type="submit"]:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    background: var(--dark-gray);
+    border-top: 1px solid var(--gold);
+    font-size: 1rem;
+    color: var(--light-gray);
+}
+/* Email Popup mit Close-Button */
+.email-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(26, 26, 26, 0.95);
+    color: var(--gold-light);
+    padding: 2rem;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.email-popup.visible {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+    color: var(--gold-light);
+}
+
+/* ===== ANIMATIONEN ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .info, .leaders, .contact {
+        padding: 3rem 1rem;
+    }
+
+    .expectations-container {
+        flex-direction: column;
+    }
+
+    .offerings, .expectations {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
